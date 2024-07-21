@@ -73,5 +73,12 @@ Encore
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
 ;
+const path = require('path');
 
-module.exports = Encore.getWebpackConfig();
+let config = Encore.getWebpackConfig();
+config.resolve.alias = {
+    ...config.resolve.alias,
+    ...{"~": path.resolve(__dirname, "assets/js/")}
+}
+
+module.exports = config;

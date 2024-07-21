@@ -1,0 +1,4 @@
+services:
+    App\Services\ExchangeRateService\ExchangeRateServiceInterface:
+        alias: 'App\Services\ExchangeRateService\NbpExchangeService'
+        public: true
