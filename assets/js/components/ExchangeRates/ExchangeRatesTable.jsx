@@ -25,7 +25,7 @@ const ExchangeRatesTable = () => {
     const [todayRates, setTodayRates] = useState([]);
     const [rates, setRates] = useState([]);
 
-    // KK: common mistake would be to have isLoading and isError states seperately
+    // Info:  common mistake would be to have isLoading and isError states seperately
     // But since request can't both load and be errored, we should use one state
     // Ultimately it be a custom hook for fetching data
     const [requestState, setRequestState] = useState("loading");
@@ -57,7 +57,7 @@ const ExchangeRatesTable = () => {
         }
 
         return () => {
-            // KK: abort the request
+            // Info:  abort the request
         }
     }, []);
 
@@ -66,7 +66,7 @@ const ExchangeRatesTable = () => {
     }, [currentDate]);
 
     const onFilter = ({ date }) => {
-        // KK: We only have one filter so we're using simplest approach,
+        // Info:  We only have one filter so we're using simplest approach,
         // but if we had more we'd set it up differently
         const params = new URLSearchParams(location.search);
         params.set('date', date);

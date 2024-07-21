@@ -29,11 +29,11 @@ class ExchangeRatesController extends AbstractController
         try {
             $exchangeRates = $this->exchangeRatesService->getExchangeRates($date);
         } catch (\Exception $e) {
-            // KK: This should be handled better, we should diffenteriate between handled exceptions and unhandled
+            // Info:  This should be handled better, we should diffenteriate between handled exceptions and unhandled
             // Right now we don't display proper error on frontend anyway
             return $this->json(['error' => $e->getMessage()], $e->getCode());
         }
-        // KK: we intentionally omit "mid" value
+        // Info:  we intentionally omit "mid" value
         // According to specification we don't need it on frontend, and it could be considered "sensitive"
         return $this->json($exchangeRates);
     }

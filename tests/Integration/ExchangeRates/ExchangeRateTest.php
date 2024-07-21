@@ -21,7 +21,7 @@ class ExchangeRateTest extends WebTestCase
         $this->mockService();
     }
 
-    // KK: API calls can cost a lot, modify data etc., that's why we mock it
+    // Info:  API calls can cost a lot, modify data etc., that's why we mock it
     // We might want to test the API itself, but that depends
     protected function mockService()
     {
@@ -43,7 +43,7 @@ class ExchangeRateTest extends WebTestCase
         $this->assertJson($response->getContent());
         $responseData = json_decode($response->getContent(), true);
 
-        // KK: DTO should just have interface + method for this
+        // Info:  DTO should just have interface + method for this
         $object = json_decode(json_encode(
             new ExchangeRateWithPrices(
                 "dolar amerykański",
